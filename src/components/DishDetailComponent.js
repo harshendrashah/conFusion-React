@@ -8,18 +8,16 @@ class DishDetail extends Component {
 
     }
 
-    
     renderDish(dish) {
         if (dish!=null){
             return(
-                <Card className="clo=12 col-md-5 m-1">
+                <Card className="col-12 col-md-5 m-1">
                     <CardImg width="100%" src={dish.image} alt={dish.name} />
                     <CardBody>
                         <CardTitle><strong>{dish.name}</strong></CardTitle>
                         <CardText>{dish.description}</CardText>
                     </CardBody>
-                </Card>
-                
+                </Card>  
             );
         } else {
             return(
@@ -30,16 +28,19 @@ class DishDetail extends Component {
 
     renderComments(array) {
         if(array.length != 0) {
-            return array.map(comment => (
-                <div className="list-unstyled">
-                    <div>
-                        {comment.comment}
-                    </div>
-                    <div>
-                        {comment.author} {comment.date}
-                    </div>
-                </div>
-            ));
+            return (
+                <div className="col-12 col-md-5 m-1">
+                    <h4>Comments</h4>
+                    {array.map(comment => (
+                        <ul className="list-unstyled">
+                            <li>
+                                <p>{comment.comment}</p>
+                                <p>-- {comment.author} , {comment.date}</p>
+                            </li>
+                        </ul>
+                    )
+                    )}
+                </div>);
         } else {
             return(
                 <div></div>
@@ -50,13 +51,8 @@ class DishDetail extends Component {
     render() {
         return(
             <div className="row">
-                
-                    {this.renderDish(this.props.selectedDish)}
-                
-                <div className="col-12 col-md-5 m-1">
-                    <h4>Comments</h4>
-                    {this.renderComments(this.props.selectedDish.comments)}
-                </div> 
+                {this.renderDish(this.props.selectedDish)}
+                {this.renderComments(this.props.selectedDish.comments)} 
             </div>
         );
     }

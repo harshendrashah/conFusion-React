@@ -4,8 +4,7 @@ import { Card, CardImg, CardImgOverlay, CardBody, CardText, CardTitle } from 're
 class DishDetail extends Component {
 
     constructor(props) {
-        super(props);
-
+        super(props)
     }
 
     renderDish(dish) {
@@ -35,7 +34,7 @@ class DishDetail extends Component {
                         <ul className="list-unstyled">
                             <li>
                                 <p>{comment.comment}</p>
-                                <p>-- {comment.author} , {comment.date}</p>
+                                <p>-- {comment.author} , {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'short', day:'2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
                             </li>
                         </ul>
                     )
@@ -49,10 +48,20 @@ class DishDetail extends Component {
     }
 
     render() {
+        let dish;
+        if (this.props.selectedDish) {
+            dish = (
+                <div className="row">
+                    {this.renderDish(this.props.selectedDish)}
+                    {this.renderComments(this.props.selectedDish.comments)}
+                </div>
+            )
+        } else {
+            dish = <div></div>
+        }
         return(
-            <div className="row">
-                {this.renderDish(this.props.selectedDish)}
-                {this.renderComments(this.props.selectedDish.comments)} 
+            <div className="container">
+                {dish}
             </div>
         );
     }

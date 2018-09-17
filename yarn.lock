@@ -1124,9 +1124,20 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
+bootstrap-social@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/bootstrap-social/-/bootstrap-social-5.1.1.tgz#7530c678adf56cf8fad3fa82c29d4d3e5d027501"
+  dependencies:
+    bootstrap "~3"
+    font-awesome "~4.7"
+
 bootstrap@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0.tgz#ceb03842c145fcc1b9b4e15da2a05656ba68469a"
+
+bootstrap@~3:
+  version "3.3.7"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
 
 botstrap@^0.20.1:
   version "0.20.1"
@@ -2859,6 +2870,10 @@ follow-redirects@^1.0.0:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.8.tgz#1dbfe13e45ad969f813e86c00e5296f525c885a1"
   dependencies:
     debug "=3.1.0"
+
+font-awesome@4.7.0, font-awesome@~4.7:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
 
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"

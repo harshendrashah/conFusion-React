@@ -4,11 +4,11 @@ import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 function RenderMenuItem({dish, onClick}) {
     return(
         <Card onClick={() => onClick(dish.id)}>
-                        <CardImg width="100%" src={dish.image} alt={dish.name} />
-                        <CardImgOverlay>
-                            <CardTitle><strong>{dish.name}</strong></CardTitle>
-                        </CardImgOverlay>
-                    </Card>
+            <CardImg width="100%" src={dish.image} alt={dish.name} />
+                <CardImgOverlay>
+                    <CardTitle><strong>{dish.name}</strong></CardTitle>
+                </CardImgOverlay>
+            </Card>
     );
 }
    
@@ -32,7 +32,5 @@ const Menu = (props) => {
         </div>
     );
 }
-
-        
 
 export default Menu;

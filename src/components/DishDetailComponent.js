@@ -14,6 +14,7 @@ class CommentForm extends Component {
             isModalOpen: false
         };
         this.toggleModal = this.toggleModal.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(values) {
@@ -54,17 +55,17 @@ class CommentForm extends Component {
                                 </Col>
                         </Row>
                         <Row className="form-group">
-                            <Label htmlFor="yourname" className="ml-3">Your Name</Label>
+                            <Label htmlFor="author" className="ml-3">Your Name</Label>
                                 <Col md={12}>
-                                    <Control.text model=".yourname" id="yourname"
-                                        name="yourname" placeholder="Your Name"
+                                    <Control.text model=".author" id="author"
+                                        name="author" placeholder="Your Name"
                                         className="form-control"
                                         validators={{
                                             required, minLength: minLength(3), maxLength: maxLength(15)
                                         }} />
                                     <Errors
                                         className="text-danger"
-                                        model=".yourname"
+                                        model=".author"
                                         show="touched"
                                         messages={{
                                             required: 'Required',

@@ -13,8 +13,7 @@ function RenderMenuItem({dish, onClick}) {
                     <CardTitle><strong>{dish.name}</strong></CardTitle>
                 </CardImgOverlay>        
             </Link>
-        </Card>
-            
+        </Card>      
     );
 }
    

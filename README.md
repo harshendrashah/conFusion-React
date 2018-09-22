@@ -3,12 +3,12 @@
 Demo Website of Ristorante con fusion developed during Coursera's Front-End Web Development with React
 
 ## How to launch the project locally     
-   `bash 
+   `
     git clone --recursive https://github.com/harshendrashah/conFusion-React.git 
     ` 
 ### For launching the project: 
   1. Start the server using:
-  `bash
+  `
   json-server --watch db.json -d 2000 -p 3001
   `
   2. Then open the browser and go to:
@@ -18,7 +18,7 @@ Demo Website of Ristorante con fusion developed during Coursera's Front-End Web 
   1. Open the project in your favourite IDE
   2. Install the dependencies.
   3. Start the server using:
-  `bash
+  `
     json-server --watch db.json -d 2000 -p 3001
     ` 
   4. Use one of the following commnds to run:

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Breadcrumb, BreadcrumbItem, Button,Row, Label, Col} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, Form, Errors, actions } from 'react-redux-form';
+import { connect } from 'react-redux';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -17,11 +18,11 @@ class Contact extends Component {
     }
 
     handleSubmit(values) {
-        console.log('Current State is: ' + JSON.stringify(values));
-        alert('Current State is: ' + JSON.stringify(values));
+        console.log('Thank you for your feedback!\n' + JSON.stringify(values));
         this.props.resetFeedbackForm();
+        this.props.postFeedback(values);
+        alert('Thank you for your feedback!\n' + JSON.stringify(this.props.feedback));
     }
-
    
     render() {
         return(
@@ -197,4 +198,8 @@ class Contact extends Component {
     }
 }
 
-export default Contact;
+const mapStateToProps = state => ({
+    feedback: state.feedback
+});
+
+export default connect(mapStateToProps)(Contact);

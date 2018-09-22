@@ -188,16 +188,10 @@ export const addFeedback = (feedback) => ({
 });
 
 export const postFeedback = (feedback) => (dispatch) => {
-
-    const newFeedback = {
-        feedback: feedback
-    };
-
-    //newFeedback.date = new Date().toISOString();
     
     return fetch(baseUrl + 'feedback', {
         method: "POST",
-        body: JSON.stringify(newFeedback),
+        body: JSON.stringify(feedback),
         headers: {
           "Content-Type": "application/json"
         },

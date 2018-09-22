@@ -193,7 +193,7 @@ export const postFeedback = (feedback) => (dispatch) => {
         feedback: feedback
     };
 
-    newFeedback.date = new Date().toISOString();
+    //newFeedback.date = new Date().toISOString();
     
     return fetch(baseUrl + 'feedback', {
         method: "POST",

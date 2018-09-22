@@ -3,20 +3,24 @@ import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'r
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 function RenderLeader(leader) {
     if (leader != null) {
         return(
-            <Media tag="li">
-                <Media left top>
-                    <Media object src={baseUrl + leader.leader.image} alt={leader.leader.name} />
+            
+                <Media tag="li">
+                    
+                        <Media left>
+                            <Media object src={baseUrl + leader.leader.image} alt={leader.leader.name} />
+                        </Media>
+                        <Media body className="ml-5">
+                            <Media heading>{leader.leader.name}</Media>
+                            <p>{leader.leader.designation}</p> 
+                            <p>{leader.leader.description}</p>
+                        </Media>
+                    
                 </Media>
-                <Media body className="ml-5">
-                    <Media heading>{leader.leader.name}</Media>
-                    <p>{leader.leader.designation}</p> 
-                    <p>{leader.leader.description}</p>
-                </Media>
-            </Media>
             
         );
     } else {
@@ -107,9 +111,20 @@ function About(props) {
                         <h2>Corporate Leadership</h2>
                     </div>
                     <div className="col-12">
-                        <Media list>
-                            {leaders}
-                        </Media>
+                    <Media list>
+                        <Stagger in>                            
+                            {props.leaders.leaders.map((leader) => {  
+                                return (
+                                    <Fade in>
+                                    <div key={leader.id} className="col-12 m-1">                                        
+                                        <RenderLeader leader={leader} />                                        
+                                    </div>
+                                    </Fade>
+                                );
+                            })}
+                        </Stagger>
+                    </Media>                
+
                     </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@
 Demo Website of Ristorante con fusion developed during Coursera's Front-End Web Development with React
 
 ## How to launch the project locally     
+   **[Clone the repository](https://github.com/harshendrashah/conFusion-React.git )** from : "https://github.com/harshendrashah/conFusion-React.git " 
    `
     git clone --recursive https://github.com/harshendrashah/conFusion-React.git 
     ` 

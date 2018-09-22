@@ -11,12 +11,10 @@ Demo Website of Ristorante con fusion developed during Coursera's Front-End Web 
     
 ### For launching the project: 
   1. Start the server using:
-  
   `
   json-server --watch db.json -d 2000 -p 3001
   `
-  2. Then open the browser and go to:
-  
+  2. Then open the browser and go to:  
   `https://localhost:3001
   `
   
@@ -29,9 +27,7 @@ Demo Website of Ristorante con fusion developed during Coursera's Front-End Web 
     ` 
     
   4. Use one of the following commnds to run:
-  
   `yarn start`
-  
    `npm start
    `
 
